@@ -1,7 +1,10 @@
 from transformers import AutoModelForCausalLM, AutoTokenizer
+from datasets import load_dataset
+dataset = load_dataset("cnn_dailymail", "3.0.0")
+
 
 def generate_text(prompt, max_length=50):
-    model_name = "meta-llama/Llama-3.2"  # Replace with an available model path on Hugging Face
+    model_name = "meta-llama/Llama-3.2"  
 
     # Load model and tokenizer
     tokenizer = AutoTokenizer.from_pretrained(model_name)
